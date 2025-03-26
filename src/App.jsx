@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Reservations from './pages/Reservations';
 import Loyalty from './pages/Loyalty';
 import Origins from './pages/Origins';
+import './App.css';
 
 export default function App() {
   return (

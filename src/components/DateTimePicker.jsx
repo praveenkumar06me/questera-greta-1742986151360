@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { format, addDays, isAfter, isBefore, parseISO, setHours, setMinutes } from 'date-fns';
+import { format, addDays, isAfter, parseISO } from 'date-fns';
 
 export default function DateTimePicker({ onDateTimeSelect, selectedDateTime, className }) {
-  const [selectedDate, setSelectedDate] = useState(selectedDateTime || '');
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedDate, setSelectedDate] = useState(selectedDateTime?.date || '');
+  const [selectedTime, setSelectedTime] = useState(selectedDateTime?.time || '');
 
   const minDate = format(new Date(), 'yyyy-MM-dd');
   const maxDate = format(addDays(new Date(), 30), 'yyyy-MM-dd');
@@ -19,7 +19,7 @@ export default function DateTimePicker({ onDateTimeSelect, selectedDateTime, cla
     setSelectedDate(date);
     setSelectedTime('');
     if (onDateTimeSelect) {
-      onDateTimeSelect({ date, time: selectedTime });
+      onDateTimeSelect({ date, time: '' });
     }
   };
 

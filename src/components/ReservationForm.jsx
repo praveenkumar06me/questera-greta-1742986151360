@@ -16,7 +16,6 @@ export default function ReservationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this would send the data to a server
     setSubmitted(true);
   };
 
